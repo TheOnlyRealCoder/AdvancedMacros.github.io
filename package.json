@@ -2,7 +2,7 @@
   "name": "advancedmacros",
   "description": "A mod to automate the player completely with both simple and complex macros scripts.",
   "scripts": {
-    "build": "bundle exec jekyll build&&broccoli build --overwrite",
+    "build": "bundle exec jekyll build&&broccoli build",
     "test": "semistandard && stylelint ./assets/css/",
     "fix": "semistandard --fix& stylelint ./assets/css/ --fix"
   },
