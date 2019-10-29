@@ -1,3 +1,4 @@
+/* global performance */
 'use strict';
 const textArt = `
      _       _                               _ 
@@ -10,11 +11,13 @@ const textArt = `
     ⎸  • ⎹    | |  | | (_| | (__| | | (_) \\__ \\
     \\ __ /    |_|  |_|\\__,_|\\___|_|  \\___/|___/
 `;
-function choose (arr) {
-  return arr[
-    Math.floor(Math.random() * arr.length)
-  ];
-}
+
+// function choose (arr) {
+//   return arr[
+//     Math.floor(Math.random() * arr.length)
+//   ];
+// }
+
 function logTimes (message) {
   try {
     performance.mark(message); // this one is for WebPageTest
@@ -35,4 +38,4 @@ function logTimes (message) {
 window.onload = function () { logTimes('DocLoaded'); };
 console.log(textArt
 //  + 'xyz. ' + choose([ 'thing1', "thing2" ])
- );
+);
