@@ -20,6 +20,7 @@ favicon: /favicon-32x32.png
 description: >-
   A mod to automate the player completely with both simple and complex macros scripts.
 baseurl: "/" # the subpath of your site, e.g. /blog
+repository: "https://github.com/AdvancedMacros/AdvancedMacros.github.io"
 url: "https://AdvancedMacros.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: /:year/:month/:day/:title
 locale: 'en'
