@@ -28,10 +28,21 @@ jobs:
       env:
         CI: true
 
-    - name: build & deploy
+    - name: build
       run: |
         npm run build --if-present
-        ./deploy.sh
+      env:
+        CI: true
+      
+    - name: deploy
+      run: |
+        git init
+        git config user.name "$GITHUB_ACTOR"
+        git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+        git add .
+        git commit -m 'Deploy to GitHub Pages'
+        git push --force "https://$GH_PAT@github.com/$GITHUB_REPOSITORY.git" master:gh-pages
+        rm -fr .git
       env:
         CI: true
         GH_PAT: ${{ secrets.GH_PAT }}
