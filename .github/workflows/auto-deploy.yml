@@ -23,8 +23,7 @@ jobs:
     - name: bundler install, npm install, test, build, deploy
       run: |
         gem install bundler
-        bundle install --jobs 4 --retry 3
-        npm ci
+        bundle install --jobs 4 --retry 3&npm ci
         npm test
         npm run build --if-present
         deploy.sh
