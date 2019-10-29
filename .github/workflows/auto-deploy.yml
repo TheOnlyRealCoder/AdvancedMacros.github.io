@@ -1,6 +1,9 @@
-name: Ruby
+name: deploy
 
-on: [push]
+on:
+  push:
+    branches:
+    - master
 
 jobs:
   build:
@@ -27,3 +30,4 @@ jobs:
         deploy.sh
       env:
         CI: true
+        GH_PAT: ${{ secrets.GH_PAT }}
