@@ -22,7 +22,7 @@ jobs:
         node-version: 12.x
     - name: bundler install, npm install, test
       run: |
-        gem install bundler
+        gem install bundler jekyll
         bundle install --jobs 4 --retry 3&npm ci
         npm test
       env:
