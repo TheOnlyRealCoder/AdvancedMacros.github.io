@@ -1,0 +1,23 @@
+{
+  "name": "advancedmacros",
+  "description": "A mod to automate the player completely with both simple and complex macros scripts.",
+  "scripts": {
+    "build": "bundle exec jekyll build&&broccoli build --overwrite",
+    "test": "semistandard && stylelint ./assets/css/",
+    "fix": "semistandard --fix& stylelint ./assets/css/ --fix"
+  },
+  "devDependencies": {
+    "semistandard": "^14.2.0",
+    "stylelint": "^11.1.1",
+    "stylelint-config-standard": "^19.0.0"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdvancedMacros/AvancedMacros.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AdvancedMacros/AvancedMacros.github.io/issues"
+  },
+  "homepage": "https://github.com/AdvancedMacros/AvancedMacros.github.io#readme"
+}
