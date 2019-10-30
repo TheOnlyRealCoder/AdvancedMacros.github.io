@@ -10,9 +10,9 @@ layout: none
   "favicon": "{{ '/favicon-32x32.png' | absolute_url }}",
   {% if site.author %}
    "author": {
-      "name": {{ site.author.name | default: site.author | json }},
+      "name": "{{ site.author.name | default: site.author | json }}"
       {% if site.author.uri %}
-      "url": {{ site.author.uri | json }}
+      ,"url": {{ site.author.uri | json }}
       {% endif %}
   },
   {% endif %}

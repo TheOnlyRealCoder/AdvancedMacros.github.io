@@ -1,0 +1,30 @@
+<header>
+  <div class="flexbox">
+    <div class="center-on-mobiles">
+      <h1>
+        <a href="/" class="logo">
+          <img height="65" srcset="/assets/logo/128.png 128w, /assets/logo/504.png 504w, /assets/logo/751.png 751w, /assets/logo/996.png 996w, /assets/logo/1218.png 1218w, /assets/logo/1425.png 1425w, /assets/logo/1613.png 1613w, /assets/logo/1786.png 1786w, /assets/logo/2160.png 2160w" style="max-height: 47px;" src="/assets/logo/504.png" alt="Logo"> <span style="vertical-align: top;">Advanced Macros</span>
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav hide-on-mobiles">
+      {% include primary-nav-items.html %}
+    </nav>
+    <div class="search hide-on-mobiles">
+      {% include search/input.html %}
+    </div>
+    <div class="meta hide-on-mobiles">
+      <ul>
+        <li>
+          <a href="{{ site.repository }}/releases/tag/v{{ site.version }}">v{{ site.version }}</a>
+        </li>
+        <li>
+          <a href="https://github.com/AdvancedMacros">GitHub</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <nav class="mobile-nav show-on-mobiles">
+    {% include mobile-nav-items.html %}
+  </nav>
+</header>

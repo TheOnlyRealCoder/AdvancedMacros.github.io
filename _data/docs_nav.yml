@@ -1,0 +1,19 @@
+- title: Getting Started
+  docs:
+    - link: /docs/
+    - link: /docs/step-by-step/01-setup/
+- title: Guides
+  docs:
+    - link: /docs/installation/
+    - link: /docs/support/
+    - link: /docs/troubleshooting/
+- title: Reference
+  docs:
+    - link: /docs/reference/events/
+    - link: /docs/reference/functions/
+    - link: /docs/reference/hud2d/
+    - link: /docs/reference/hud3d/
+- title: Tutorials
+  docs:
+    - link: /tutorials/blah/
+    - link: /tutorials/blah-2/

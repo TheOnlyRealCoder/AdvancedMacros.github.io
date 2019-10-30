@@ -25,6 +25,7 @@ url: "https://AdvancedMacros.github.io" # the base hostname & protocol for your 
 permalink: /:year/:month/:day/:title
 locale: 'en'
 lang: en
+version: 9.0.2
 
 # twitter_username: jekyllrb
 github_username:  AdvancedMacros
@@ -58,11 +59,20 @@ markdown: kramdown
 # theme: minima
 plugins:
   - jekyll-archives
+  - jekyll-redirect-from
+
 collections:
-  # authors:
-  #   output: true
+  docs:
+    permalink: "/:collection/:path/"
+    output: true
+  posts:
+    permalink: "/news/:year/:month/:day/:title/"
+    output: true
+  tutorials:
+    output: true
   favicons:
     permalink: /:path/:name
+    output: true
   root_files:
     permalink: /:path/:name
 
@@ -73,10 +83,20 @@ defaults:
   #   values:
   #     layout: "author"
   - scope:
-      path: ""
-      type: "posts"
+      path: _docs
+      type: docs
     values:
-      layout: "post"
+      layout: docs
+  - scope:
+      path: _tutorials
+      type: tutorials
+    values:
+      layout: docs
+  - scope:
+      path: _posts
+      type: posts
+    values:
+      layout: news_item
   - scope:
       path: ""
     values:
@@ -89,6 +109,9 @@ defaults:
 
 highlighter: rouge
 encoding: utf-8
+
+sass:
+  style: compressed
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

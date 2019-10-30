@@ -35,7 +35,11 @@ function logTimes (message) {
     console.log('failed to mark performance.');
   }
 }
-window.onload = function () { logTimes('DocLoaded'); };
+window.onload = function () {
+  logTimes('DocLoaded');
+  const a = document.createElement('script');
+  const m = document.getElementsByTagName('script')[0] || document.getElementsByTagName('head')[0].firstChild; a.async = 1; a.src = 'https://www.google-analytics.com/analytics.js'; m.parentNode.insertBefore(a, m);
+};
 console.log(textArt
 //  + 'xyz. ' + choose([ 'thing1', "thing2" ])
 );
