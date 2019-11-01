@@ -29,7 +29,6 @@ In all event pages that show a table in an image they use these 2 lines of code 
 
 The first argument will always be `"event"` and
 the second argument will be the name of the event.
-
 ---
 ---
 ## Player
@@ -38,7 +37,9 @@ This event fires when underwater or leaving it and the amount of air you have ha
 If the air level is `-6` and the player is underwater still during the next `3 ticks` they will take damage and the air level will be reset to `0`.
 Air will decrease by `1` every `3 ticks`. In Minecraft the max amount of air is `300`, this has been scaled down to `100`.
 
-<u>For this event maximum air is </u><code class="highlighter-rouge">100</code><u>, and after </u><code class="highlighter-rouge">-6</code><u> the player takes damage.</u>
+<div class="note">
+For this event maximum air is <code class="highlighter-rouge">100</code>, and after <code class="highlighter-rouge">-6</code> the player takes damage.
+</div>
 
 Args:
 
@@ -76,11 +77,14 @@ Args:
 
 ### AttackEntity
 This event is fired when you attack any entity.
-This event is **not triggered by arrows**.
 
 Args:
 
 	3. attacked entity info
+
+<div class="note warning">
+This event is not triggered by arrows.
+</div>
 
 ### AttackReady
 This event is triggered when the player has finished swinging their arm and can attack at full power again.
@@ -98,7 +102,6 @@ Args:
 	6. block side [up, down, north, east, south, west]
 	
 ### BreakItem
-**This event does not work in** `1.12.2` **versions of the mod**
 Event is triggered when an item is broken
 
 Args:
@@ -106,6 +109,10 @@ Args:
 	3. The item that broke
 	
 ![Event Details](/assets/img/events/breakItem.png)
+<div class="note warning">
+This event does not work in 1.12.2 versions of the mod
+</div>
+
 ### Death
 This event triggers when the player dies. <font color="#40444b">(tragic...)</font>
 
@@ -138,6 +145,21 @@ Args:
 	5. "main hand" or "off hand"
 
 ### HealthChanged
+This event is triggered whenever the players health has changed.
+
+Args:
+
+	3. Current health
+	4. Amount changed
+	5. Damage type
+	
+Here the player has healed from 19 health to 20.
+![Event Details](/assets/img/events/HealthChanged.png)
+
+<div class="note warning">
+Damage type is only available for 1.14.4+
+</div>
+
 ### HotbarChanged
 ### HungerChanged
 ### ItemCrafted
@@ -162,8 +184,10 @@ The Actionbar event fires whenever text is displayed above the hotbar.
 An example is when playing a record
 
 Args:
-3. displayed text
-4. is the text is colorized ( cycles through colors )
+
+	3. displayed text
+	4. is the text is colorized ( cycles through colors )
+	
 ![Event Details](/assets/img/events/actionbar.png)
 
 ### Chat
@@ -175,9 +199,9 @@ Args:
 	4. Unformulated Text
 	5. Extras
 
-Extras can be tooltips, functions or click actions
-In the example below you can see that the &T code makes it so clicking on the players name
-will type "/msg Player366" without sending.
+Extras can be tooltips, functions or click actions.<br>
+In the example below you can see that the `&T` code makes it so clicking on the players name
+will type `/msg Player366` without sending.
 ![Event Details](/assets/img/events/chat.png)
 
 ### ChatFilter
@@ -189,8 +213,10 @@ Args:
 	4. Unformatted text
 	5. Extras
 
+<div class="note">
 Any values returned by the script are used by log to create the altered chat message.
 Returning false will cancel the message.
+</div>
 
 Example:
 ```lua
@@ -200,8 +226,12 @@ return args[3]:gsub("Amazing Server", "lagging"), table.unpack(args[5])
 ```
 ![Script result](/assets/img/events/chatFilter.png)
 
-**Tip:** Chat filters can be chained by simply having more than one chat filter event in your bindings. 
-The return values from the first will be passed to the second adding in the `"event"` and `"ChatFilter"` as the first and second arguments again for you.
+<div class="note">
+<font size="5">Tip:</font><br>
+Chat filters can be chained by simply having more than one chat filter event in your bindings. <br>
+<br>
+The return values from the first will be passed to the second adding in the <code class="highlighter-rouge">"event"</code> and <code class="highlighter-rouge">"ChatFilter"</code> as the first and second arguments again for you.
+</div>
 
 ### ChatSendFilter
 The ChatSendFilter event is triggered whenever the you are about to send a chat message.
@@ -219,9 +249,13 @@ return args[3]:gsub("btw","by the way")
 ```
 ![Script result](/assets/img/events/chatSendFilter.png)
 
-**Tip:** By canceling the message you can use it to create custom commands.
+<div class="note">
+<font size="5">Tip:</font><br>
+By canceling the message you can use it to create custom commands.
+</div>
+
 ### ContainerOpen
-This event is triggered anytime you open a GUI that has an inventory.
+This event is triggered anytime you open a `GUI` that has an inventory.
 
 Args:
 
@@ -229,7 +263,7 @@ Args:
 	4. Container type (used to get the inventory mapping)
 
 ### GuiClosed
-This event is called when a GUI is closed.
+This event is called when a `GUI` is closed.
 
 No special arguments for this event.
 
@@ -243,7 +277,7 @@ Args:
 
 Controls always include `isOpen` and `close` functions.
 For vanilla GUIs additional functions are included.
-For any gui with an inventory arg 3 should also include a value 'inventory' with controls for that inventory's contents.
+For any gui with an inventory `arg 3` should also include a value `inventory` with controls for that inventory's contents.
 
 **Anvil**<br>
 
@@ -277,9 +311,7 @@ For any gui with an inventory arg 3 should also include a value 'inventory' with
 |setLines( Table: lines )         |                                  | Grabs each index from the given table to set the sign's text |
 |setLines(<br>  String:line1<br>  <,String: line2><br>  <,String: line3><br>  <,String: line4> ) |                                  | Sets each text line, nil values will be "" |
 
-**Book**
-
-**1.14.4+**
+**Book (1.14.4+)**
 
 |**Function Name**              | **Return value**               | **Description**                                           |
 |:-------------------------------|:-------------------------------|:---------------------------------------------|
@@ -297,7 +329,7 @@ For any gui with an inventory arg 3 should also include a value 'inventory' with
 |gotoPage( Number: PageNum ) |                               | Jump directly to a certain page number.<br>PageNum will be moved into the range [1, pageCount] if it falls outside that range. |
 |pageCount()                         | Number: NumPages     | Return the number of pages in this book. |
 
-**1.12.2**, Contains all of the above with the following changes:
+**Book (1.12.2)**, Contains all of the above with the following changes:
 
 |**Function Name**              | **Return value**               | **Description**                                           |
 |:-------------------------------|:-------------------------------|:---------------------------------------------|
