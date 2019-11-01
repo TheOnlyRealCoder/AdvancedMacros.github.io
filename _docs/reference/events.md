@@ -29,6 +29,7 @@ In all event pages that show a table in an image they use these 2 lines of code 
 
 The first argument will always be `"event"` and
 the second argument will be the name of the event.
+
 ---
 ---
 ## Player
@@ -102,8 +103,7 @@ Args:
 	6. block side [up, down, north, east, south, west]
 	
 ### BreakItem
-Event is triggered when an item is broken
-
+Event is triggered when an item is broken.<font color="#40444b"> You got the extended warranty, right?</font><br>
 Args:
 	
 	3. The item that broke
@@ -127,6 +127,11 @@ This event is triggered whenever the player changes dimensions.
 |Overworld   | 0          |
 |Nether        | 1          |
 |End            | -1         |
+
+Args:
+
+	3. Dimension entered
+	4. Dimension left
 
 **1.14.3+**<br>
 ![Event Details](/assets/img/events/dimensionChanged.png)
@@ -161,22 +166,179 @@ Damage type is only available for 1.14.4+
 </div>
 
 ### HotbarChanged
-### HungerChanged
-### ItemCrafted
-### ItemDurability
-### ItemPickup
-### ItemTossed
-### JoinWorld
-### LeaveWorld
-### PlayerIgnited
-### PotionStatus
-### Respawn
-### SaturationChanged
-### UseBed
-### UseItem
-### WakeUp
-### XP
+This event is fired whenever the player changes the selected hotbar item either through scrolling or pressing 1-9 on their keyboard.
 
+Args:
+
+	3. Currently selected hotbar index
+	4. The hotbar index ranges from 1 to 9
+
+![Event Details](/assets/img/events/hotbarChanged.png)<br>
+Example where the player has just selected their 7th slot
+
+### HungerChanged
+This event is triggered whenever the players hunger level changes.
+
+Args:
+
+	3. Current hunger level
+	4. Amount changed
+
+![Event Details](/assets/img/events/HungerChanged.png)<br>
+Here you can see that the player has just lost 1 of 20 hunger points and is currently at 17 of 20
+
+### ItemCrafted
+This event is triggered when ever you craft an item.
+
+Args:
+
+	3. Item crafted
+	4. Crafting matrix before crafting
+	
+![Event Details](/assets/img/events/ItemCrafted.png)<br>
+Shows that atleast 1 sugar was crafted from a matrix where
+14 sugar cane were in the top left slot
+<font color="#AAAAAA">(Image from version 7.2.1 update needed)</font>
+
+### ItemDurability
+This event is fired whenever the durability of the held item changes.
+
+Args:
+
+	3. The item
+	4. Durability change
+	
+![Event Details](/assets/img/events/ItemDurability.png)
+
+### ItemPickup
+This event is fired whenever you pick up an item.
+
+Args:
+
+	3. Item picked up
+	
+![Event Details](/assets/img/events/ItemPickup.png)
+
+### ItemTossed
+This event is fired when you toss an item.
+
+Args:
+
+	3. Item picked up
+
+![Event Details](/assets/img/events/ItemTossed.png)
+
+### JoinWorld
+The JoinWorld event is fired when the player (you) joins any world. (Single player or multi player)
+
+| Arg | Description | Explanation |
+|:----|:-------------------------|:-------------|
+|3     |"VANILLA"/"MODDED"  |Indicates if the server/world joined is modded or not. |
+|4.    |"SP"/"MP"                   |Indicates if you are on a Single Player world or a Multi Player world. |
+|5.    |Server Name               |The name of the server as you named it in your multiplayer menu |
+|6.    |MOTD                         |false if none exists |
+|7.    |IP                              |false if none exists |
+
+<div class="note">Args 5,6, and 7 only show up when on a multiplayer world.</div>
+![Event Details](/assets/img/events/JoinWorld.png)<br>
+Left shows a `single player` world, Right shows a `server`.<br>
+`localhost` shows up on both the `5` and `7` because the server was named after it's `IP`
+
+### LeaveWorld
+This event is triggered when you disconnect from a server or single player game.
+
+There are no special arguments added to this event.
+
+### PlayerIgnited
+This event is triggered when the player either catches fire or is extinguished.
+
+Args:
+
+	3. Is currently on fire (boolean)
+
+![Event Details](/assets/img/events/PlayerIgnited.png)
+
+### PotionStatus
+This event is triggered while a potion effect is applied to the player.
+<div class="note">This event is fired once for each active potion effect.</div>
+
+This event will be re-triggered as the duration values on the potion effects change.
+The interval used to determine how frequently to call this event can be configured in the mod settings.
+
+**Showing the current setting:**
+```lua
+log( getSettings().events.potionStatusFrequency )
+```
+The rule here is that when the potions remaining duration measured in ticks -1 is divisible by the frequency, the event is triggered
+( (duration-1) % frequency == 0 )
+
+Args:
+
+	3. Potion details
+	
+![Event Details](/assets/img/events/PotionStatus.png)
+
+### Respawn
+The Respawn event triggers after the player dies and presses `Respawn`.<font color="#40444b">Good as new!</font><br>
+
+This event has no special arguments.
+
+### SaturationChanged
+This event is triggered when the players `saturation level` is changed.
+
+Args:
+
+	3. Current saturation level
+	4. Amount changed
+
+![Event Details](/assets/img/events/SaturationChanged.png)
+
+### UseBed
+Triggered when the player enters a bed.
+
+No special args for this event.
+
+### UseItem
+This event is triggered while the use key is being held or when it is released.
+This only works for items with a `use` action (like food, potions, bows, etc) not blocks being placed.
+
+Args:
+
+	3. item being used
+	4. 72000-ticks held
+	5. phase (start, tick, stop)
+
+<div class="note">
+The 72000 value comes from Minecraft. (1 hour in ticks)
+This is the maximum amount of time you can hold the use button on an item before it is forced to finish
+</div>
+
+<div class="note">
+This events tick rate can be configured using:
+
+<code class="language-lua highlighter-rouge">getSettings().events.useItemFrequency</code>
+</div>
+
+
+Its default value is 20 (once per second)
+
+### WakeUp
+This event triggers when a player exits a bed (regardless of time change).<br>
+It will also trigger if manual exiting the bed.
+
+No special args for this function.
+
+### XP
+This event fires whenever the amount of experience the player has or the number of levels they have changes.
+
+Args:
+
+	3. Current experience points (the bar)
+	4. Current level
+	5. Change in points
+	6. Change in level
+
+![Event Details](/assets/img/events/XP.png)
 ---
 ## GUI
 ### Actionbar
@@ -361,11 +523,71 @@ For any gui with an inventory `arg 3` should also include a value `inventory` wi
 ---
 ## World
 ### PlayerJoin
+Triggered whenever a player joins the game.
+This event does not rely on the `Player has joined the game` message and will work even if a server has hidden those messages.
+
+Args:
+
+	3. Players name
+
+![Event Details](/assets/img/events/PlayerJoin.png)
+
 ### PlayerLeave
+This event triggers when any player leaves the server.
+This event's implementation does not rely on the `Player left the game` messages and will work even if
+a server has hidden those messages.
+
+Args:
+
+	3. the player who left. <font color="#40444b">(Good bye friend!)</font>
+	
+![Event Details](/assets/img/events/PlayerLeave.png)
+
 ### Sound
+This event is triggered when any sound is played in game (but not by `playSound` or `getSound`).
+
+Args:
+
+	3. Sound name
+	4. extra info
+	5. controls including
+	
+|Control | Return Value |Description |
+|:--------|:------------|:---------|
+|isPlaying() | Boolean | Check if the sound is still playing.<br>Only relates to this one instance. |
+|stop() |      | Stop the sound() |
+
 ### Title
+The title event is triggered whenever a player is shown a title in game.
+
+Args:
+
+	3. title text
+	4. subtitle text (if none then it's "" )
+	5. display time in ticks
+	6. fade in time in ticks
+	7. fade out time in ticks
+
 ### Weather
+This event is triggered whenever the weather changes in game.<br>
+Weather will not normal change directly from clear to thunder or from thunder directly to clear.<br>
+It will instead transition through rain.
+
+| Weather types: |
+|:-----------------|
+|clear                |
+|rain                 |
+|thunder            |
+
+Args:
+	
+	3. Current weather
+
+![Event Details](/assets/img/events/Weather.png)
 ### WorldSaved
+This event is triggered whenever your single player game is saved.
+
+No special arguments for this event.
 
 ---
 ## Other
@@ -374,5 +596,33 @@ This event is the catch all event. Anything **except for chat filters** will tri
 **Key and mouse events will also trigger this.**
 
 Args will match as described in other events.
+
 ### ProfileLoaded
+This event is fired whenever the current Bindings profile has been changed.
+
+Args:
+
+	3. Profile name
+
+![Event Details](/assets/img/events/ProfileLoaded.png)<br>
+ A profile named `Documentation` has just been loaded
 ### Startup
+This event is triggered right after the mod has been loaded and is an excellent time load any functions that you want to be available for the remainder of the time the game runs.
+
+No special args for this event
+
+
+This example code will run every script that exists in a folder named "startup"
+and can be a neat way to run multiple scripts during startup without cluttering your bindings menu.
+
+```lua
+local files = filesystem.list("~macros/startup")
+
+toast("Startup","loading files...")
+for a, b in pairs(files) do
+  local pass, err = pRun("~macros/startup/"..b)
+  if not pass then
+    log("&cstartup&7/&c"..b.."&4 "..err)
+  end
+end
+```
