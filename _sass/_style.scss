@@ -322,6 +322,12 @@ article {
   margin: 0 10px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   font-size: 16px;
+  
+  /*TheIncgi*/
+  h3{
+	color: $event-h3;
+  }
+  td{font-size: 70%;}
 }
 
 @media (max-width: 480px) {
@@ -501,6 +507,18 @@ aside {
     font-size: 0.9em;
     padding: 3px;
   }
+}
+
+/* TheIncgi's probably trash code for coloring text*/
+span.flavorText {
+  color: $lighter-dark;
+  &:hover{
+	color: $grey;
+  }
+}
+
+span.comment{
+	olor: #grey;
 }
 
 /* News */

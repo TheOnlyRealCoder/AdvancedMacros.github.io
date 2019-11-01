@@ -7,10 +7,6 @@ redirect_from:
   - /docs/reference/
   - /docs/functions/
 ---
-<style>
-	h3{color:#f0c000}
-	td{font-size: 75%}
-</style>
 **Events** are used to trigger scripts when different things in-game occur. The whole list of events that can be caught can be found in the table on the right =>
 You can create an event binding by changing the third icon into the icon of a grass block with an arrow as shown below.
 ![Event Binding](/assets/img/events.png)
@@ -103,7 +99,7 @@ Args:
 	6. block side [up, down, north, east, south, west]
 	
 ### BreakItem
-Event is triggered when an item is broken.<font color="#40444b"> You got the extended warranty, right?</font><br>
+Event is triggered when an item is broken.<span class="flavorText"> You got the extended warranty, right?</span><br>
 Args:
 	
 	3. The item that broke
@@ -114,7 +110,7 @@ This event does not work in 1.12.2 versions of the mod
 </div>
 
 ### Death
-This event triggers when the player dies. <font color="#40444b">(tragic...)</font>
+This event triggers when the player dies. <span class="flavorText">(tragic...)</span>
 
 There are no special arguments.
 ### DimensionChanged
@@ -198,7 +194,7 @@ Args:
 ![Event Details](/assets/img/events/ItemCrafted.png)<br>
 Shows that atleast 1 sugar was crafted from a matrix where
 14 sugar cane were in the top left slot
-<font color="#AAAAAA">(Image from version 7.2.1 update needed)</font>
+<span class="comment">(Image from version 7.2.1 update needed)</span>
 
 ### ItemDurability
 This event is fired whenever the durability of the held item changes.
@@ -279,7 +275,7 @@ Args:
 ![Event Details](/assets/img/events/PotionStatus.png)
 
 ### Respawn
-The Respawn event triggers after the player dies and presses `Respawn`.<font color="#40444b">Good as new!</font><br>
+The Respawn event triggers after the player dies and presses `Respawn`.<span class="flavorText">Good as new!</span><br>
 
 This event has no special arguments.
 
@@ -389,7 +385,7 @@ return args[3]:gsub("Amazing Server", "lagging"), table.unpack(args[5])
 ![Script result](/assets/img/events/chatFilter.png)
 
 <div class="note">
-<font size="5">Tip:</font><br>
+<h4>Tip:</h4><br>
 Chat filters can be chained by simply having more than one chat filter event in your bindings. <br>
 <br>
 The return values from the first will be passed to the second adding in the <code class="highlighter-rouge">"event"</code> and <code class="highlighter-rouge">"ChatFilter"</code> as the first and second arguments again for you.
@@ -412,7 +408,7 @@ return args[3]:gsub("btw","by the way")
 ![Script result](/assets/img/events/chatSendFilter.png)
 
 <div class="note">
-<font size="5">Tip:</font><br>
+<h4>Tip:</h4><br>
 By canceling the message you can use it to create custom commands.
 </div>
 
@@ -539,7 +535,7 @@ a server has hidden those messages.
 
 Args:
 
-	3. the player who left. <font color="#40444b">(Good bye friend!)</font>
+	3. the player who left. <span class="flavorText">(Good bye friend!)</span>
 	
 ![Event Details](/assets/img/events/PlayerLeave.png)
 
