@@ -7,9 +7,11 @@ redirect_from:
   - /docs/reference/
   - /docs/functions/
 ---
-**Events** are used to trigger scripts when different things in-game occur. The whole list of events that can be caught can be found in the table on the right =>
+
+**Events** are used to trigger scripts when different things in-game occur.
 You can create an event binding by changing the third icon into the icon of a grass block with an arrow as shown below.
 ![Event Binding](/assets/img/events.png)
+
 1. Change this icon to the grass block icon as shown in the image. This tells the mod that you want to bind it to an event.
 2. Clicking the white triangle you select what type of event you want the mod to look for.
 3. Clicking the square you select what script you want the mod to run upon the event trigger.
@@ -27,7 +29,7 @@ The first argument will always be `"event"` and
 the second argument will be the name of the event.
 
 ---
----
+
 ## Player
 ### AirChanged
 This event fires when underwater or leaving it and the amount of air you have has changed.
@@ -325,6 +327,7 @@ It will also trigger if manual exiting the bed.
 No special args for this function.
 
 ### XP
+
 This event fires whenever the amount of experience the player has or the number of levels they have changes.
 
 Args:
@@ -335,7 +338,7 @@ Args:
 	6. Change in level
 
 ![Event Details](/assets/img/events/XP.png)
----
+
 ## GUI
 ### Actionbar
 The Actionbar event fires whenever text is displayed above the hotbar.
@@ -515,8 +518,6 @@ For any gui with an inventory `arg 3` should also include a value `inventory` wi
 |setTrackOutput(Boolean: shouldTrack) |                     | Set if the command block should track the output from a command. |
 |getOutput()                        | String: outputText         | Returns the output text from the last command that ran. |
 
-
----
 ## World
 ### PlayerJoin
 Triggered whenever a player joins the game.
@@ -585,7 +586,6 @@ This event is triggered whenever your single player game is saved.
 
 No special arguments for this event.
 
----
 ## Other
 ### Anything
 This event is the catch all event. Anything **except for chat filters** will trigger this.
