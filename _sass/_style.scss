@@ -322,12 +322,12 @@ article {
   margin: 0 10px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   font-size: 16px;
-  
-  /*TheIncgi*/
-  h3{
-	color: $event-h3;
+
+  /* TheIncgi */
+  h3 {
+    color: $event-h3;
   }
-  td{font-size: 70%;}
+  td { font-size: 70%; }
 }
 
 @media (max-width: 480px) {
@@ -509,16 +509,17 @@ aside {
   }
 }
 
-/* TheIncgi's probably trash code for coloring text*/
+/* TheIncgi's probably trash code for coloring text */
 span.flavorText {
   color: $lighter-dark;
-  &:hover{
-	color: $grey;
+
+  &:hover {
+    color: $grey;
   }
 }
 
-span.comment{
-	color: $grey;
+span.comment {
+  color: $grey;
 }
 
 /* News */
@@ -785,7 +786,7 @@ blockquote {
 
 table {
   width: 100%;
-  background-color: #555;
+  background-color: $black;
   margin: 0.5em 0;
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
@@ -795,7 +796,7 @@ thead {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   color: #fff;
-  background-color: #3a3a3a;
+  background-color: $dark;
 
   th {
     position: relative;
@@ -828,8 +829,8 @@ th {
 }
 
 tbody td {
-  border-top: 1px solid #747474;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid $dark;
+  // border-top: 1px solid rgba(0, 0, 0, 0.1);
 
   ul {
     padding-left: 1em;
