@@ -60,7 +60,7 @@ markdown: kramdown
 plugins:
   - jekyll-archives
   - jekyll-redirect-from
-  - jekyll-toc
+  # - jekyll-toc
 
 collections:
   docs:
