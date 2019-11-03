@@ -1,7 +1,5 @@
 <div class="unit one-fifth hide-on-mobiles">
   <aside>
-    <h4>Contents</h4>
-    {% include toc.html html=content %}
     {% for section in site.data.docs_nav %}
       <h4>{{ section.title }}</h4>
       <ul>
@@ -15,5 +13,8 @@
         {% endfor %}
       </ul>
     {% endfor %}
+    
+    <h4>Contents</h4>
+    {% include toc.html html=content h_max=3 %}
   </aside>
 </div>
