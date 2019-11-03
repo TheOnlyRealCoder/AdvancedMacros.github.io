@@ -9,7 +9,10 @@ redirect_from:
 <div class="note">Any arguments with <code><></code> around them are optional.</div>
 
 ### attack
-#### attack( <Number: millis> )
+
+**attack( \<Number: millis> )**
+
+
 Causes the player to rapidly click or hold the `attack` keybinding (`lmb`)
 when millis is...
 
@@ -21,7 +24,10 @@ when millis is...
 |millis > 0 | Attack keybind is held for that many milliseconds. |
 
 ### back
-#### back( Number: millis )
+
+**back( Number: millis )**
+
+
 Causes the player hold the `back` keybinding (`s`)
 when millis is...
 
@@ -32,11 +38,17 @@ when millis is...
 |millis > 0 | Back keybind is held for that many milliseconds.   |
 
 ### connect
-#### connect( String: serverIP )
+
+**connect( String: serverIP )**
+
+
 Attempts to connect you to a server.
 
 ### customizeSkin
-#### customizeSkin( String: Part, Boolean: value )
+
+**customizeSkin( String: Part, Boolean: value )**
+
+
 Turns skin layers on or off for the player.
 
 | Parts     | Alias    |
@@ -50,11 +62,17 @@ Turns skin layers on or off for the player.
 | cape       |           |
 
 ### disconnect
-#### disconnect()
+
+**disconnect()**
+
+
 Leaves the server you are connected too.
 
 ### drop
-#### drop( <Boolean: Drop All> )
+
+**drop( \<Boolean: Drop All> )**
+
+
 Throw your currently held item.
 (like `q`)
 If `true` is given as an arg then it will drop the whole stack.
@@ -71,7 +89,10 @@ when millis is...
 |millis > 0 | forward keybind is held for that many milliseconds.   |
 
 ### getBiome
-#### getBiome( <Number: BlockX, Number: BlockZ> )
+
+**getBiome( <Number: BlockX, Number: BlockZ> )**
+
+
 Returns a table with details about the biome either at the players location or the given location.
 
 Output:
@@ -91,7 +112,10 @@ Output:
 |warm        |
 
 ### getBlock
-#### getBlock( Number: x, Number: y, Number: z )
+
+**getBlock( Number: x, Number: y, Number: z )**
+
+
 Returns a table with information about a block at the given position.
 If the block requested is not loaded or is `void air` then it will return false.
 
@@ -104,12 +128,18 @@ If the block requested is not loaded or is `void air` then it will return false.
 |mapColor   | Table | The color this block would be on a map in {r,g,b,a} format |
 
 ### getBlockLight
-#### getBlockLight(<Number: x, Number: y, Number: z>)
+
+**getBlockLight(<Number: x, Number: y, Number: z>)**
+
+
 Returns the current block light level at a given position.
 If no position is given it will use the players position.
 
 ### getBlockList
-#### getBlockList()
+
+**getBlockList()**
+
+
 A bit of a misnomer, this function returns a table of all `blocks` and `items` in the game (including mods).
 Each entry will be what it would look like if you had an item stack of `1` in an inventory and `log`ed it.
 The table uses the item id (such as `minecraft:birch_stairs`) as the key, and the example item as the value.
@@ -117,9 +147,15 @@ The table uses the item id (such as `minecraft:birch_stairs`) as the key, and th
 <div class="note">You can check what creative tabs a block or item would belong to by scanning the results from this function</div>
 
 ### getBoundingBox
-#### getBoundingBox( Number: blockX, Number: blockY, Number: blockZ )
+
+**getBoundingBox( Number: blockX, Number: blockY, Number: blockZ )**
+
+
 #### getBoundingBox( {Number: blockX, Number: blockY, Number: blockZ} )
-#### getBoundingBox( Number: EntityID )
+
+**getBoundingBox( Number: EntityID )**
+
+
 Returns a table with functions relating to a bounding box of a block or entity.\
 For blocks, a second return value of `true` or `false` will be returned indicating if the block is solid.
 
@@ -139,11 +175,17 @@ For blocks, a second return value of `true` or `false` will be returned indicati
 |findEntityOnPath| Number: x,<br>Number: y,<br>Number: z<br><b>or</b><br>{x, y, z} |   | Creates a line starting from the bounding box's center to the center + the vector.<br> The first entity that is found to cross this region (including the box's size) is returned. |
 
 ### getChunkUpdateCount
-#### getChunkUpdateCount()
+
+**getChunkUpdateCount()**
+
+
 Returns the number of chunk updates as seen in the `F3` debug menu.
 
 ### getEntity
-#### getEntity( Number:ID )
+
+**getEntity( Number:ID )**
+
+
 Returns a table with information about an entity much like `getPlayer()`.\
 `getEntityList()` can be used to locate an entity's ID number.
 
@@ -183,7 +225,10 @@ Returns a table with information about an entity much like `getPlayer()`.\
 |lookingAt| {Number, Number, Number} | What block the entity is looking at |
 
 ### getEntityList
-#### getEntityList()
+
+**getEntityList()**
+
+
 Returns a list of entities loaded in your chunks.
 
 Each entity will have...
@@ -193,21 +238,33 @@ Each entity will have...
 | class | Exact type of entity |
 
 ### getEntityNBT
-#### getEntityNBT( Number: ID )
+
+**getEntityNBT( Number: ID )**
+
+
 Return a table with just the NBT data for an entity.\
 ID number is from the `getEntityList()` function.
 
 ### getFps
-#### getFps()
+
+**getFps()**
+
+
 Returns the current FPS as seen in the `F3` debug menu.
 
 ### getHotbar
-#### getHotbar()
+
+**getHotbar()**
+
+
 Returns the currently selected hotbar index.\
 (`1`-`9`)
 
 ### getInventory
-#### getInventory( <String: name> )
+
+**getInventory( \<String: name> )**
+
+
 Returns a table listing the players inventory contents.\
 If a name is given it will return the visible part of another players inventory (or false if no player is found).
 
@@ -217,7 +274,10 @@ If a name is given it will return the visible part of another players inventory 
 ....Looks like this returns a table where jars can be added so require can find them..?
 
 ### getLight
-#### getLight(<Number: x, Number: y, Number: z>)
+
+**getLight(<Number: x, Number: y, Number: z>)**
+
+
 Returns the current block and sky light level at a given position.
 If no position is given it will use the players position.
 
@@ -226,11 +286,17 @@ Return values:
 	light level, sky, block
 
 ### getLoadedPlayers
-#### getLoadedPlayers()
+
+**getLoadedPlayers()**
+
+
 Returns a list of any players in your loaded chunks.
 
 ### getPlayer
-#### getPlayer( <String: name> )
+
+**getPlayer( \<String: name> )**
+
+
 Returns a hoard of information in a table about your player (no arg), or the target player (name arg).
 
 | Key  | Type | Note |
@@ -285,7 +351,10 @@ Returns a hoard of information in a table about your player (no arg), or the tar
 |lookingAt| {Number, Number, Number} | What block the entity is looking at |
 
 ### getPlayerBlockPos
-#### getPlayerBlockPos( <String: name> )
+
+**getPlayerBlockPos( \<String: name> )**
+
+
 Returns the block position of either yourself or a player by name.<br>
 If a player can not be found the function will return <code>false</code>
 
@@ -293,15 +362,24 @@ The position will always be whole numbers.\
 If you want the decimal part, use `getPlayerPos()`
 
 ### getPlayerList
-#### getPlayerList()
+
+**getPlayerList()**
+
+
 Returns a list of players on the server. This is not limited to loaded chunks like `getLoadedPlayers()`.
 
 ### getPlayerNBT
-#### getPlayerNBT( <String: PlayerName> )
+
+**getPlayerNBT( \<String: PlayerName> )**
+
+
 Returns the NBT data for a player or yourself.
 
 ### getPlayerPos
-#### getPlayerPos( <String: Player Name >)
+
+**getPlayerPos( \<String: Player Name >)**
+
+
 Returns the exact players position of your player or the given player.
 If the player can't be found then it will return `false`
 ```lua
@@ -309,11 +387,17 @@ local x, y, z = getPlayerPos()
 ```
 
 ### getProfile
-#### getProfile()
+
+**getProfile()**
+
+
 Returns the name of the current profile from the bindings menu.
 
 ### getRecipes
-#### getRecipes( <String: item> )
+
+**getRecipes( \<String: item> )**
+
+
 Returns a list of crafting recipes.
 If an `item` is specified, any recipes whos output item id contains `item` in the string will be added to the list.\
 For example: `stone` will add `minecraft:stone`'s recipe as well as `minecraft:cobblestone_stairs` because it has the word `stone` in it.
@@ -334,7 +418,10 @@ For `output` items:
 
 
 ### getScreen
-#### getScreen()
+
+**getScreen()**
+
+
 Returns a new `image` with controls with the pixel data being a screenshot of the game.
 
 ### getSettings
