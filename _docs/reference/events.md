@@ -131,6 +131,8 @@ Args:
 	3. Dimension entered
 	4. Dimension left
 
+<div class="note warning">Non vanilla dimension names will apear as <code class="highlighter-rouge">unknown</code></div>
+	
 **1.14.3+**<br>
 ![Event Details](/assets/img/events/dimensionChanged.png)
 

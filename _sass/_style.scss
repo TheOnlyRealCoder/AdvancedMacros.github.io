@@ -517,6 +517,13 @@ span.flavorText {
     color: $grey;
   }
 }
+span.tableFlavorText {
+  color: $black;
+  
+  &:hover {
+    color: $grey;
+  }
+}
 
 span.comment {
   color: $grey;
