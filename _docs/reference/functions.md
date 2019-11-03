@@ -191,13 +191,97 @@ Each entity will have...
 | class | Exact type of entity |
 
 ### getEntityNBT
+#### getEntityNBT( Number: ID )
+Return a table with just the NBT data for an entity.\
+ID number is from the `getEntityList()` function.
+
 ### getFps
+#### getFps()
+Returns the current FPS as seen in the `F3` debug menu.
+
 ### getHotbar
+#### getHotbar()
+Returns the currently selected hotbar index.\
+(`1`-`9`)
+
 ### getInventory
+#### getInventory( <String: name> )
+Returns a table listing the players inventory contents.\
+If a name is given it will return the visible part of another players inventory (or false if no player is found).
+
+<div class="note">When using on another player, you can expect to only see armor and held items.</div>
+
 ### getJarLibLoaders
+....Looks like this returns a table where jars can be added so require can find them..?
+
 ### getLight
+#### getLight(<Number: x, Number: y, Number: z>)
+Returns the current block and sky light level at a given position.
+If no position is given it will use the players position.
+
+Return values:
+
+	light level, sky, block
+
 ### getLoadedPlayers
+#### getLoadedPlayers()
+Returns a list of any players in your loaded chunks.
+
 ### getPlayer
+#### getPlayer( <String: name> )
+Returns a hoard of information in a table about your player (no arg), or the target player (name arg).
+
+| Key  | Type | Note |
+|:-----|:------|:-----|
+|name|String |        |
+|inventory | Table | Lists everything you'd see in <code>getInventory()</code> |
+|pos  | Table | Entity position as {x,y,z} |
+|mainHand| Table | Item held in mainHand or <code>false</code> |
+|offHand| Table | Item held in offHand or <code>false</code> |
+|invSlot | int | equivilant of <code>getHotbar()</code> |
+|dimension | Table |   |
+|pitch      | Number | The Up/Down rotation of the entity's head |
+|yaw       | Number | The Left/Right rotation of the entity's head |
+|exp      | Number | Players experience points in this level |
+|expLevel | Number | Player experience level |
+|expTotal | Number | Total experience with prior levels |
+|eyeHeight| Number | How far from the ground the players eyes are located. Changes when sneaking. |
+|fallDist  | Number  | How far the entity has fallen.<br>0 if the entity is not falling. |
+|height   | Number  |   |
+|width    | Number  |  |
+|swingProgress | Number | Precentage before swing motion is complete and ready to attack again. |
+|maxHurtResTime | Number | How long until the entity can take damage again. |
+|isCollidedHoriz | Boolean | |
+|isCollidedVert | Boolean | |
+|isNoClip         | Boolean | If the entity can pass through blocks like a spectator |
+|onGround      | Boolean | |
+|isInvulnerable | Boolean | |
+|bedLocation   | {Number, Number, Number} | May be omitted if unset or unavailable. |
+|team             | String   | <code class="highlighter-rouge">none</code> or the teams name |
+|luck             | Number | Current luck amount |
+|velocity        | {Number, Number, Number} | {x, y, z} velocity of the entity |
+|health          | Number | |
+|hunger         | Number | |
+|isOnLadder   | Boolean | |
+|hasNoGravity | Boolean | |
+|potionEffects | Table | Each entry describes another potion effect |
+|air | Number | Amount of air remaining until the entity starts drowning |
+|isInWater | Boolean | |
+|isInLava | Boolean | |
+|immuneToFire | Boolean | |
+|isImmuneToExplosion | | <span class="tableFlavorText">Someone, give this to a creeper</span> |
+|isOnFire |Boolean | |
+|isSprinting | Boolean | |
+|isSneaking | Boolean | |
+|isEyltraFlying | Boolean | |
+|isSleeping | Boolean | |
+|entityID | Number | Used in entity highlighting |
+|gamemode| String | <code>spectator</code>, <code>creative</code>, <code>survival</code><br><span class="comment">Seems adventure mode may show up as survival. [BUG]</span> |
+|entityRiding | Table | Lists all the stuff in this table, but for the entity that is being ridden. |
+|isInvisible | Boolean | |
+|uuid| String | |
+|lookingAt| {Number, Number, Number} | What block the entity is looking at |
+
 ### getPlayerBlockPos
 ### getPlayerList
 ### getPlayerNBT
