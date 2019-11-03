@@ -13,7 +13,7 @@ layout: default
           </div>
           <h1>Step by Step Tutorial</h1>
           <h2>{{ page.position }}. {{ page.title }}</h2>
-          {{ content }}
+          {% include anchor_headings.html html=content %}
           {% include step-index.html %}
         </article>
       </div>
