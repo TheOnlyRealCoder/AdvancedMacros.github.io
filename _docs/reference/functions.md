@@ -6,6 +6,8 @@ redirect_from:
   - /docs/functions/
 ---
 
+<div class="note">Any arguments with <code><></code> around them are optional.</div>
+
 ### attack
 #### attack( <Number: millis> )
 Causes the player to rapidly click or hold the `attack` keybinding (`lmb`)
@@ -283,12 +285,58 @@ Returns a hoard of information in a table about your player (no arg), or the tar
 |lookingAt| {Number, Number, Number} | What block the entity is looking at |
 
 ### getPlayerBlockPos
+#### getPlayerBlockPos( <String: name> )
+Returns the block position of either yourself or a player by name.<br>
+If a player can not be found the function will return <code>false</code>
+
+The position will always be whole numbers.\
+If you want the decimal part, use `getPlayerPos()`
+
 ### getPlayerList
+#### getPlayerList()
+Returns a list of players on the server. This is not limited to loaded chunks like `getLoadedPlayers()`.
+
 ### getPlayerNBT
+#### getPlayerNBT( <String: PlayerName> )
+Returns the NBT data for a player or yourself.
+
 ### getPlayerPos
+#### getPlayerPos( <String: Player Name >)
+Returns the exact players position of your player or the given player.
+If the player can't be found then it will return `false`
+```lua
+local x, y, z = getPlayerPos()
+```
+
 ### getProfile
+#### getProfile()
+Returns the name of the current profile from the bindings menu.
+
 ### getRecipes
+#### getRecipes( <String: item> )
+Returns a list of crafting recipes.
+If an `item` is specified, any recipes whos output item id contains `item` in the string will be added to the list.\
+For example: `stone` will add `minecraft:stone`'s recipe as well as `minecraft:cobblestone_stairs` because it has the word `stone` in it.
+
+For 
+```lua
+local recipes = getRecipes()
+```
+The output is formated as follows:
+recipes[`recipeType`][`recipeNumber`][`'in'`/`'out'`]\
+For `input` items:
+ - shaped recipes will list items as [x][y][options]
+ - shapless recipes will list items as [x][options]
+For `output` items:
+ - Will list the output item directly
+ 
+<div class="note">Currently (9.0.2) there is no method to check if additional items are returned such as a bucket from cake.</div>
+
+
 ### getScreen
+#### getScreen()
+Returns a new `image` with controls with the pixel data being a screenshot of the game.
+
 ### getSettings
 ### getSkyLight
 ### getSound
