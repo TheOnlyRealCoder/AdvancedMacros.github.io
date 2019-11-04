@@ -63,6 +63,11 @@ header {
 
   .logo {
     display: block;
+    overflow: none;
+    white-space: nowrap;
+    &>span {
+      white-space: nowrap
+    }
   }
 
   .search .svg-icons {
