@@ -63,7 +63,7 @@ header {
 
   .logo {
     display: block;
-    overflow: none;
+    overflow: hidden;
     // white-space: nowrap;
     &>span {
       white-space: nowrap
