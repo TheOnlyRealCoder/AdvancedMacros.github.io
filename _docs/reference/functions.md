@@ -425,6 +425,108 @@ For `output` items:
 Returns a new `image` with controls with the pixel data being a screenshot of the game.
 
 ### getSettings
+
+**getSettings()**
+
+Returns a table containing any mod settings and controls for Minecraft settings.
+
+Some useful stuff:
+`getSettings().editor.colors.textFill` controls the background color in the editor. (Transparent colors are allowed)
+All of the mod's colors are defined in the settings and can be changed to whatever you like.
+
+`getSettings().chat.maxLines` Controls the number of lines the chat can store before it starts removing messages. By default Minecraft has this as `100`. Changing this can be useful for looking at large tables in chat.
+A good number to use would be `1000`.
+
+<div class="note warning">Making the <code>maxLines</code> too large may cause lag after many messages accumulate.</div>
+
+`getSettings().scriptBrowser.columns` Controls how many columns are in the file browser. (Too many may cause them to overlap)
+`getSettings().profiles` This is the table where each binding profile is saved. You can edit them from here if you want to do so.
+`getSettings().minecraft` Returns a table with functions for changing Minecraft settings
+
+| Function Name            | Args              | Return Value(s) | Description                              |
+|:-------------------------|:------------------|:----------------|:-----------------------------------------|
+|getFov                    |                   | Number          | Current FOV                              |
+|setFov                    | Number:FOV        |                 | Sets FOV. Can be out of normal range.    |
+|getVolume                 | String:Category   | Number          | Gets the volume for a selected sound category.<br>[See table below] |
+|setVolume                 | String:Category,<br>Number:volume | | Sets the volume for some category.<br>[See table below] |
+|setRenderDistance         | Number            |                 | Sets your render distance. Value is clamped to range of 2 to 32 |
+|getRenderDistance         |                   | Number          | Returns the render distance setting. |
+|setFullscreen             | <Boolean>         |                 | Arg defaults true. Sets the game to fullscreen or exits fullscreen with false. |
+|isFullscreen              |                   | Boolean         | Is the game full screen.                                   |
+|getSkinCustomization      |                   | Table           | Returns a table listing if a skin layer is on or off.      |
+|getSkinCustomization      | String            | Boolean         | Returns a boolean indicating if a skin layer is on or off. |
+|getMaxFps                 |                   | Number          | Returns the FPS limit |
+|setMaxFps                 | Number            |                 | Sets the max FPS |
+|setAdvancedItemTooltips   | Boolean           |                 | Enable or disable advanced tooltips. (shows durability and id on items) |
+|isAdvancedItemTooltips    |                   | Boolean         | Check if advanced tooltips are visible |
+|getSmoothLighting         |                   | String          | Lighting mode of <code>off</code>, <code>min</code>, or <code>max</code> |
+|setSmoothLighting         | String:Mode       |                 | Sets smooth lighting mode. Modes are <code>off</code>, <code>min</code>, or <code>max</code> |
+|setAutoJump               |
+|isAutoJump                |
+|getChatOpacity            |
+|setChatOpacity            |
+|getChatScale              |
+|setChatScale              |
+|getChatHeightFocused      |
+|setChatHeightFocused      |
+|getChatHeightUnfocused    |
+|setChatHeightUnfocused    |
+|setChatWidth              |
+|getChatWidth              |
+|setCloudsMode             |
+|getCloudsMode             |
+|setDifficulty             |
+|getDifficulty             |
+|setVsync                  |
+|isVsync                   |
+|setEntityShadows          |
+|isEntityShadows           |
+|setFancyGraphics          |
+|isFancyGraphics           |
+|setGuiScale               |
+|getGuiScale               |
+|setHeldItemTooltips       |
+|isHeldItemTooltips        |
+|setInvertMouse            |
+|isInvertMouse             |
+|getLanguage               |
+|getLanguages              |
+|setLanguage               |
+|getLastServer             |
+|getMainHandSide           |
+|setMainHandSide           |
+|getMipmapLevels           |
+|setMipmapLevels           |
+|getMouseSensitivity       |
+|setMouseSensitivity       |
+|setParticleLevel          |
+|getParticleLevel          |
+|setPauseOnLostFocus       |
+|isPauseOnLostFocus        |
+|setSmoothCamera           |
+|isSmoothCamera            |
+|setPerspective            |
+|getPerspective            |
+|setTouchscreenMode        |
+|isTouchscreenMode         |
+|setViewBobbing            |
+|isViewBobbing             |
+
+|Sound Categories |
+|:----------------|
+|master           |
+|music            |
+|record           |
+|weather          |
+|block            |
+|hostile          |
+|neutral          |
+|player           |
+|ambient          |
+|voice            |
+
+`getSettings().save()` Saves all changes you made to settings. Be sure to call this after making changes.
+
 ### getSkyLight
 ### getSound
 ### getWorld
