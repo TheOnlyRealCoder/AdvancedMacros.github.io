@@ -355,7 +355,7 @@ Returns a hoard of information in a table about your player (no arg), or the tar
 **getPlayerBlockPos( \<String: name> )**
 
 
-Returns the block position of either yourself or a player by name.<br>
+Returns the block position of either yourself or a player by name.\
 If a player can not be found the function will return <code>false</code>
 
 The position will always be whole numbers.\
