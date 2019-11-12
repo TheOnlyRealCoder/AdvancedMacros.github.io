@@ -461,10 +461,10 @@ A good number to use would be `1000`.
 |isAdvancedItemTooltips    |                   | Boolean         | Check if advanced tooltips are visible |
 |getSmoothLighting         |                   | String          | Lighting mode of <code>off</code>, <code>min</code>, or <code>max</code> |
 |setSmoothLighting         | String:Mode       |                 | Sets smooth lighting mode. Modes are <code>off</code>, <code>min</code>, or <code>max</code> |
-|setAutoJump               |
-|isAutoJump                |
-|getChatOpacity            |
-|setChatOpacity            |
+|setAutoJump               | Boolean:autoJump  |                 | Sets if the player uses auto jump. |
+|isAutoJump                |                   | Boolean         | Returns if the player has auto jump enabled. |
+|getChatOpacity            |                   | Number          | Returns current opacity of the chat |
+|setChatOpacity            | Number
 |getChatScale              |
 |setChatScale              |
 |getChatHeightFocused      |
