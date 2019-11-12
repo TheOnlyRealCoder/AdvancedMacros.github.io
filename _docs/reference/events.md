@@ -57,7 +57,7 @@ Args:
 	3. current armour values (in a table)
 	4. armour changes (in a table)
 	
-For the provided tables, index `1` is the boots, `4` is the helmet.<br>
+For the provided tables, index `1` is the boots, `4` is the helmet.\
 ![Event Details](/assets/img/events/ArmourDurability.png)
 
 Seen here, the player has just damaged their boots and lost `1 durability` on them.
@@ -101,7 +101,7 @@ Args:
 	6. block side [up, down, north, east, south, west]
 	
 ### BreakItem
-Event is triggered when an item is broken.<span class="flavorText"> You got the extended warranty, right?</span><br>
+Event is triggered when an item is broken.<span class="flavorText"> You got the extended warranty, right?</span>\
 Args:
 	
 	3. The item that broke
@@ -133,10 +133,10 @@ Args:
 
 <div class="note warning">Non vanilla dimension names will apear as <code class="highlighter-rouge">unknown</code></div>
 	
-**1.14.3+**<br>
+**1.14.3+**\
 ![Event Details](/assets/img/events/dimensionChanged.png)
 
-**1.12.2**<br>
+**1.12.2**\
 ![Event Details](/assets/img/events/dimensionChanged_7.7.7b.png)
 
 ### EntityInteract
@@ -173,7 +173,7 @@ Args:
 	3. Currently selected hotbar index
 	4. The hotbar index ranges from 1 to 9
 
-![Event Details](/assets/img/events/hotbarChanged.png)<br>
+![Event Details](/assets/img/events/hotbarChanged.png)\
 Example where the player has just selected their 7th slot
 
 ### HungerChanged
@@ -184,7 +184,7 @@ Args:
 	3. Current hunger level
 	4. Amount changed
 
-![Event Details](/assets/img/events/HungerChanged.png)<br>
+![Event Details](/assets/img/events/HungerChanged.png)\
 Here you can see that the player has just lost 1 of 20 hunger points and is currently at 17 of 20
 
 ### ItemCrafted
@@ -195,7 +195,7 @@ Args:
 	3. Item crafted
 	4. Crafting matrix before crafting
 	
-![Event Details](/assets/img/events/ItemCrafted.png)<br>
+![Event Details](/assets/img/events/ItemCrafted.png)\
 Shows that atleast 1 sugar was crafted from a matrix where
 14 sugar cane were in the top left slot
 <span class="comment">(Image from version 7.2.1 update needed)</span>
@@ -240,8 +240,8 @@ The JoinWorld event is fired when the player (you) joins any world. (Single play
 |7.    |IP                              |false if none exists |
 
 <div class="note">Args 5,6, and 7 only show up when on a multiplayer world.</div>
-![Event Details](/assets/img/events/JoinWorld.png)<br>
-Left shows a `single player` world, Right shows a `server`.<br>
+![Event Details](/assets/img/events/JoinWorld.png)\
+Left shows a `single player` world, Right shows a `server`.\
 `localhost` shows up on both the `5` and `7` because the server was named after it's `IP`
 
 ### LeaveWorld
@@ -279,7 +279,7 @@ Args:
 ![Event Details](/assets/img/events/PotionStatus.png)
 
 ### Respawn
-The Respawn event triggers after the player dies and presses `Respawn`.<span class="flavorText">Good as new!</span><br>
+The Respawn event triggers after the player dies and presses `Respawn`.<span class="flavorText">Good as new!</span>\
 
 This event has no special arguments.
 
@@ -323,7 +323,7 @@ This events tick rate can be configured using:
 Its default value is 20 (once per second)
 
 ### WakeUp
-This event triggers when a player exits a bed (regardless of time change).<br>
+This event triggers when a player exits a bed (regardless of time change).\
 It will also trigger if manual exiting the bed.
 
 No special args for this function.
@@ -362,7 +362,7 @@ Args:
 	4. Unformulated Text
 	5. Extras
 
-Extras can be tooltips, functions or click actions.<br>
+Extras can be tooltips, functions or click actions.\
 In the example below you can see that the `&T` code makes it so clicking on the players name
 will type `/msg Player366` without sending.
 ![Event Details](/assets/img/events/chat.png)
@@ -390,9 +390,9 @@ return args[3]:gsub("Amazing Server", "lagging"), table.unpack(args[5])
 ![Script result](/assets/img/events/chatFilter.png)
 
 <div class="note">
-<h4>Tip:</h4><br>
-Chat filters can be chained by simply having more than one chat filter event in your bindings. <br>
-<br>
+<h4>Tip:</h4>\
+Chat filters can be chained by simply having more than one chat filter event in your bindings. \
+\
 The return values from the first will be passed to the second adding in the <code class="highlighter-rouge">"event"</code> and <code class="highlighter-rouge">"ChatFilter"</code> as the first and second arguments again for you.
 </div>
 
@@ -413,7 +413,7 @@ return args[3]:gsub("btw","by the way")
 ![Script result](/assets/img/events/chatSendFilter.png)
 
 <div class="note">
-<h4>Tip:</h4><br>
+<h4>Tip:</h4>\
 By canceling the message you can use it to create custom commands.
 </div>
 
@@ -442,7 +442,7 @@ Controls always include `isOpen` and `close` functions.
 For vanilla GUIs additional functions are included.
 For any gui with an inventory `arg 3` should also include a value `inventory` with controls for that inventory's contents.
 
-**Anvil**<br>
+**Anvil**\
 
 |**Function Name**              | **Return value**               | **Description**                                           |
 |:--------------------------|:-------------------------|:---------------------------------------------|
@@ -568,8 +568,8 @@ Args:
 	7. fade out time in ticks
 
 ### Weather
-This event is triggered whenever the weather changes in game.<br>
-Weather will not normal change directly from clear to thunder or from thunder directly to clear.<br>
+This event is triggered whenever the weather changes in game.\
+Weather will not normal change directly from clear to thunder or from thunder directly to clear.\
 It will instead transition through rain.
 
 | Weather types: |
@@ -602,7 +602,7 @@ Args:
 
 	3. Profile name
 
-![Event Details](/assets/img/events/ProfileLoaded.png)<br>
+![Event Details](/assets/img/events/ProfileLoaded.png)\
  A profile named `Documentation` has just been loaded
 ### Startup
 This event is triggered right after the mod has been loaded and is an excellent time load any functions that you want to be available for the remainder of the time the game runs.
