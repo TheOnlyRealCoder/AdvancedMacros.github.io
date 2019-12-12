@@ -464,53 +464,54 @@ A good number to use would be `1000`.
 |setAutoJump               | Boolean:autoJump  |                 | Sets if the player uses auto jump. |
 |isAutoJump                |                   | Boolean         | Returns if the player has auto jump enabled. |
 |getChatOpacity            |                   | Number          | Returns current opacity of the chat |
-|setChatOpacity            | Number
-|getChatScale              |
-|setChatScale              |
-|getChatHeightFocused      |
-|setChatHeightFocused      |
-|getChatHeightUnfocused    |
-|setChatHeightUnfocused    |
-|setChatWidth              |
-|getChatWidth              |
-|setCloudsMode             |
-|getCloudsMode             |
-|setDifficulty             |
-|getDifficulty             |
-|setVsync                  |
-|isVsync                   |
-|setEntityShadows          |
-|isEntityShadows           |
-|setFancyGraphics          |
-|isFancyGraphics           |
-|setGuiScale               |
-|getGuiScale               |
-|setHeldItemTooltips       |
-|isHeldItemTooltips        |
-|setInvertMouse            |
-|isInvertMouse             |
-|getLanguage               |
-|getLanguages              |
-|setLanguage               |
-|getLastServer             |
-|getMainHandSide           |
-|setMainHandSide           |
-|getMipmapLevels           |
-|setMipmapLevels           |
-|getMouseSensitivity       |
-|setMouseSensitivity       |
-|setParticleLevel          |
-|getParticleLevel          |
-|setPauseOnLostFocus       |
-|isPauseOnLostFocus        |
-|setSmoothCamera           |
-|isSmoothCamera            |
-|setPerspective            |
-|getPerspective            |
-|setTouchscreenMode        |
-|isTouchscreenMode         |
-|setViewBobbing            |
-|isViewBobbing             |
+|setChatOpacity            | Number            |                 | 
+|getChatScale              |                   | Number          |
+|setChatScale              | Number            |
+|getChatHeightFocused      |                   | Number
+|setChatHeightFocused      | Number            |
+|getChatHeightUnfocused    |                   | Number
+|setChatHeightUnfocused    | Number
+|setChatWidth              | Number
+|getChatWidth              |                   | Number
+|setCloudsMode             | String            |                 | Sets the mode for cloud rendering. Modes are <code>off</code>, <code>fast</code>, or <code>fancy</code>.(not case senstive)
+|getCloudsMode             |                   | String          | Returns render mode for clouds. Modes are <code>off</code>, <code>fast</code>, or <code>fancy</code>
+|setDifficulty             | String            |                 | Sets the difficulty using the difficulty name. <code>peaceful</code>,<code>easy</code>,<code>normal</code>,<code>hard</code>
+|setDifficulty             | Number            |                 | Sets the difficulty using:<br><code>0</code> for <u>peaceful</u><br><code>1</code> for <u>easy</u><br><code>2</code> for <u>normal</u><br><code>3</code> for <u>hard</u>
+|getDifficulty             |                   | String          | Returns the current difficulty as a string
+|setVsync                  | Boolean           |                 | Sets if the game should use <code>vsync</code>
+|isVsync                   |                   | Boolean         | Returns <code>true</code> if render settings has <code>vsync</code> enabled
+|setEntityShadows          | Boolean           |                 | Set if the game should render shadows for entities
+|isEntityShadows           |                   |                 | Returns <code>true</code> if the game currently renders entity shadows
+|setFancyGraphics          | Boolean           |                 | Sets if the game should use fancy graphics
+|isFancyGraphics           |                   | Boolean         | Returns <code>true</code> if the game is currently using fancy graphics
+|setGuiScale               | String            |                 | Sets the GUI scale to one of the following modes:<br><code>auto</code>, <code>small</code>, <code>normal</code>, <code>large</code>
+|getGuiScale               |                   | String          | Returns the current GUI scale as a string.
+|setHeldItemTooltips       | Boolean           |                 | <b>For versions 9.0.2 and earlier, function acts the same as:</b> <code>setAdvancedItemTooltips</code><br>Sets if held item tooltips are enabled.
+|isHeldItemTooltips        |                   | Boolean         | Returns true if held item tooltips are enabled
+|setInvertMouse            | Boolean           |                 | Sets if the mouse should be inverted
+|isInvertMouse             |                   | Boolean         | Returns <code>true</code> if the mouse is being inverted
+|getLanguage               |                   | String          | Returns the language code for the current language.<br>Example: <code>en_us</code>
+|getLanguages              |                   | Table           | Returns a table with all valid language codes.
+|setLanguage               | String            |                 | Sets the current language used by the game
+|getLastServer             |                   | String          | Returns the ip of the last server the player was connected to.
+|getMainHandSide           |                   | String          | Returns which hand is used as the <b>main hand</b>.<br>Sides are <code>left</code> and <code>right</code>
+|setMainHandSide           | String            |                 | Set which hand is used as your main hand
+|getMipmapLevels           |                   |                 | Returns the current mipmap level
+|setMipmapLevels           | Number            |                 | Sets the number of mimpap levels used.
+|getMouseSensitivity       |                   | Number          | Returns the current mouse sensitivity setting
+|setMouseSensitivity       | Number            |                 | Sets the mouse sensitivity
+|setParticleLevel          | String            |                 | Sets the particle level for rendering. Options are:<br><code>all</code><br><code>decreased</code><br><code>minimal</code>
+|getParticleLevel          |                   | String          | Returns the current particle level as a string
+|setPauseOnLostFocus       | Boolean           |                 | Sets if the game should pause if you switch out of the game.<br>Equivilant of: <code>F3</code>+<code>P</code>
+|isPauseOnLostFocus        |                   |                 | Check if the game will pause if no longer focused.
+|setSmoothCamera           | Boolean           |                 | Set if smooth camera is enabled
+|isSmoothCamera            |                   |                 | Check if smooth camera is enabled
+|setPerspective            | String            |                 | Changes the players camera view like <code>F5</code>. Options are:<br><code>first</code><br><code>front</code><br><code>back</code>
+|getPerspective            |                   |                 | Return the players perspective as a string
+|setTouchscreenMode        | Boolean           |                 | Set if touchscreen mode should be used
+|isTouchscreenMode         |                   | Boolean         | Check if touchscreen mode is enabled
+|setViewBobbing            | Boolean           |                 | Set if view bobbing should be used.
+|isViewBobbing             |                   |                 | Check if view bobbing is enabled.
 
 |Sound Categories |
 |:----------------|
