@@ -556,6 +556,7 @@ Args:
 |isPlaying() | Boolean | Check if the sound is still playing.<br>Only relates to this one instance. |
 |stop() |      | Stop the sound() |
 
+<https://www.digminecraft.com/lists/sound_list_pc.php> has an interactive list of sounds and sound IDs that may be useful.
 ### Title
 The title event is triggered whenever a player is shown a title in game.
 
