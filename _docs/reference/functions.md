@@ -486,7 +486,7 @@ A good number to use would be `1000`.
 |isFancyGraphics           |                   | Boolean         | Returns <code>true</code> if the game is currently using fancy graphics
 |setGuiScale               | String            |                 | Sets the GUI scale to one of the following modes:<br><code>auto</code>, <code>small</code>, <code>normal</code>, <code>large</code>
 |getGuiScale               |                   | String          | Returns the current GUI scale as a string.
-|setHeldItemTooltips       | Boolean           |                 | <b>For versions 9.0.2 and earlier, function acts the same as:</b> <code>setAdvancedItemTooltips</code><br>Sets if held item tooltips are enabled.
+|setHeldItemTooltips       | Boolean           |                 | **For versions 9.0.2 and earlier, function acts the same as:** <code>setAdvancedItemTooltips</code><br>Sets if held item tooltips are enabled.
 |isHeldItemTooltips        |                   | Boolean         | Returns true if held item tooltips are enabled
 |setInvertMouse            | Boolean           |                 | Sets if the mouse should be inverted
 |isInvertMouse             |                   | Boolean         | Returns <code>true</code> if the mouse is being inverted
@@ -494,7 +494,7 @@ A good number to use would be `1000`.
 |getLanguages              |                   | Table           | Returns a table with all valid language codes.
 |setLanguage               | String            |                 | Sets the current language used by the game
 |getLastServer             |                   | String          | Returns the ip of the last server the player was connected to.
-|getMainHandSide           |                   | String          | Returns which hand is used as the <b>main hand</b>.<br>Sides are <code>left</code> and <code>right</code>
+|getMainHandSide           |                   | String          | Returns which hand is used as the **main hand**.<br>Sides are <code>left</code> and <code>right</code>
 |setMainHandSide           | String            |                 | Set which hand is used as your main hand
 |getMipmapLevels           |                   |                 | Returns the current mipmap level
 |setMipmapLevels           | Number            |                 | Sets the number of mimpap levels used.
@@ -529,6 +529,7 @@ A good number to use would be `1000`.
 `getSettings().save()` Saves all changes you made to settings. Be sure to call this after making changes.
 
 ### getSkyLight
+
 ### getSound
 ### getWorld
 ### highlightEntity
