@@ -529,8 +529,27 @@ A good number to use would be `1000`.
 `getSettings().save()` Saves all changes you made to settings. Be sure to call this after making changes.
 
 ### getSkyLight
+**getSkyLight( \<Number:x, Number:y, Number:z> )**
 
+Returns the light level provided from the sky at a given position or the players current block pos.
 ### getSound
+**getSound( String:file )**
+Returns a table with controls for playing a sound.
+When a sound stops because it has finished playing or has been stopped with the <code>stop</code> function the resources are released and are not reuseable.
+<div class="note">Unlike <code>playSound</code>, <code>getSound</code> follows the same file access rules the rest of the mod follows <span class="comment">[Link needed]</span>.<br>
+ With no prefix on the file this is the same folder as your script runs from</div>
+
+**Controls:**
+
+| Function Name            | Args              | Return Value(s) | Description                              |
+|:-------------------------|:------------------|:----------------|:-----------------------------------------|
+| isPlaying                |                   | Boolean         | Returns true if this instance of the sound is currently playing.
+| stop                     |                   |                 | Stops this instance of a sound also causeing an resources used to be released.
+| loop                     | Number            |                 | Sets the number of times to play the sound.<br><code>-1</code> and <code>nil</code> will loop endlessly
+| pause                    |                   |                 | Stops the audio without discarding resources. Playing will resume where the sound stopped.
+| play                     |                   |                 | Starts or resumes playing of an audio clip.
+| setVolume                | Number            |                 | Sets the volume for the sound. Volume should be between <code>0</code> and <code>1</code>.
+
 ### getWorld
 ### highlightEntity
 ### httpRequest
