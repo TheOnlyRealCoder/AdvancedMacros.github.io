@@ -3,7 +3,7 @@ title: Docs
 permalink: /docs/
 redirect_from:
   - /docs/home/
-  - /docs/quickstart/
+  # - /docs/quickstart/
   - /docs/extras/
 ---
 
