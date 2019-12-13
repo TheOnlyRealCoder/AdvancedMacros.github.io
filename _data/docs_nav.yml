@@ -5,6 +5,7 @@
 - title: Guides
   docs:
     - link: /docs/installation/
+    - link: /docs/quickstart/
     - link: /docs/support/
     - link: /docs/troubleshooting/
 - title: Reference
