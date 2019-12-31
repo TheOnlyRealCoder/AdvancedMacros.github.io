@@ -376,6 +376,12 @@ aside {
     &:first-child {
       margin-top: 0;
     }
+    ul {
+      padding-left: 16px;
+      a:before {
+        content: "➥ "; /*Tried a NBWS here, DimensionChanged still goes to the next line in events*/
+      }
+    }
   }
 
   li {
