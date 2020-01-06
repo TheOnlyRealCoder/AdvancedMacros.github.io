@@ -5,7 +5,7 @@ redirect_from:
   - /useful-addons/
   - /docs/useful-addons/
 ---
-# Useful Addons
+
 <div class="note">**Tip:** Load functions in a script with the <code>startup</code> event to have them ready for all your scripts.</div>
 ## With LuaJava
 
